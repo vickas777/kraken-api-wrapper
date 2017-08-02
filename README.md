@@ -22,7 +22,7 @@ In first example you have access ONLY to public methods, in second you can use b
 ### Module API Reference
 To know more about Kraken API you can on the [official API reference](https://www.kraken.com/help/api). 
 * Module methods:
-  * `kraken.setPrivateKey('new public API key')` - change public API key, (default: '')
+  * `kraken.setPublicKey('new public API key')` - change public API key, (default: '')
   * `kraken.setSecreteKey('new sign API key')` - change API sign key, (default: '')
   * `kraken.setOtp('new two factor password')` - change two-factor auth password, (default: '')
   * `kraken.setRequestTime(new timeout)` - change request timeout (default: 10000)

@@ -120,7 +120,7 @@ module.exports = (publicKey = '', secretKey = '') => {
     return prev;
   }, {});
 
-  apis.setPrivateKey = (newKey) => {
+  apis.setPublicKey = (newKey) => {
     publicKey = newKey;
   };
   apis.setSecreteKey = (newKey) => {
