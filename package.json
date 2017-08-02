@@ -1,0 +1,26 @@
+{
+  "name": "node-kraken-api",
+  "version": "0.0.1",
+  "description": "Wrapper for kraken api",
+  "main": "index.js",
+  "repository" :
+  { "type" : "git",
+    "url" : "https://github.com/vickas777/kraken-api-wrapper.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kraken",
+    "api",
+    "crypto",
+    "wrapper"
+  ],
+  "author": "vickas777@gmail.com <Bohdan Keller>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
