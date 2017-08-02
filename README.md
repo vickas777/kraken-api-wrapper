@@ -5,7 +5,7 @@ Lightweight, no external dependencies, callback/promise based wrapper for [Krake
 ## Installing / Getting started
 
 ```shell
-npm i https://github.com/vickas777/kraken-api-wrapper --save
+npm i git+https://git@github.com/vickas777/kraken-api-wrapper.git --save
 ```
 
 ## How to use
