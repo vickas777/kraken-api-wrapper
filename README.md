@@ -22,13 +22,14 @@ In first example you have access ONLY to public methods, in second you can use b
 ### Module API Reference
 To know more about Kraken API you can on the [official API reference](https://www.kraken.com/help/api). 
 * Module methods:
-  * `kraken.setPublicKey('new public API key')` - change public API key, (default: '')
-  * `kraken.setSecreteKey('new sign API key')` - change API sign key, (default: '')
-  * `kraken.setOtp('new two factor password')` - change two-factor auth password, (default: '')
-  * `kraken.setRequestTime(new timeout)` - change request timeout (default: 10000)
+  * `kraken.setPublicKey('new public API key')` - change public API key
+  * `kraken.setSecreteKey('new sign API key')` - change API sign key
+  * `kraken.setOtp('new two factor password')` - change/set two-factor auth password
+  * `kraken.setRequestTime(new timeout)` - change request timeout in ms notation (default: 10000)
   * `kraken.setApiVersion(new API version)` - change API version, (default: 0)
   
 Methods names are similar to methods in API reference. 
+
 Providing `cb` function you will have default node callback based api, if not - promise based. If you don't need to provide any parameters to request, you can set callback function instead of `params` or call without arguments to have a promise.
   
 * Public methods:
@@ -124,5 +125,19 @@ kraken.AssetPairs({
   .then(result => console.log(result))
   .catch(err => console.error(err));
 ```
-## Licensing
+Set keys and two
+```javascript
+const kraken = require('kraken-api-wrapper')();
 
+// Set keys for private API
+kraken.setPublicKey('publicKey');
+kraken.setSecreteKey('signKey');
+
+// Change request timeout to 5 sec
+kraken.setRequestTime(5000)
+
+// Get tradable balances 
+kraken.Balance()
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+```
