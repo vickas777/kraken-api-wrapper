@@ -1,11 +1,17 @@
 {
-  "name": "node-kraken-api",
-  "version": "0.0.1",
+  "name": "kraken-api-wrapper",
+  "version": "0.1.0",
   "description": "Wrapper for kraken api",
   "main": "index.js",
   "repository" :
   { "type" : "git",
     "url" : "https://github.com/vickas777/kraken-api-wrapper.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/vickas777/kraken-api-wrapper/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
