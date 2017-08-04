@@ -5,7 +5,7 @@ Lightweight, no external dependencies, callback/promise based wrapper for [Krake
 ## Installing / Getting started
 
 ```shell
-npm i git+https://git@github.com/vickas777/kraken-api-wrapper.git --save
+npm i kraken-api-wrapper --save
 ```
 
 ## How to use
@@ -125,7 +125,7 @@ kraken.AssetPairs({
   .then(result => console.log(result))
   .catch(err => console.error(err));
 ```
-Set keys and two
+Set keys for using private methods
 ```javascript
 const kraken = require('kraken-api-wrapper')();
 

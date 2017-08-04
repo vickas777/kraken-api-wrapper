@@ -1,6 +1,6 @@
 {
   "name": "kraken-api-wrapper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wrapper for kraken api",
   "main": "index.js",
   "repository" :
