@@ -1,12 +1,6 @@
 const request = require('./libs/request');
-const helpers = require('./libs/helpers');
-
-const getSign = helpers.makeSignature;
-const isFunction = helpers.isFunction;
-const methods = require('./libs/methods');
-
-const publicMethods = methods.public;
-const privateMethods = methods.private;
+const { makeSignature, isFunction } = require('./libs/helpers');
+const { privateMethods, publicMethods } = require('./libs/methods');
 
 /**
  * Prepare body, headers and make request
@@ -20,11 +14,13 @@ const privateMethods = methods.private;
  * @param {Function} callback
  */
 const makeRequest = (options, callback) => {
-  const { body, publicKey, secretKey, path, otp, timeout } = options;
+  const {
+    body, publicKey, secretKey, path, otp, timeout,
+  } = options;
   const headers = {};
   headers['User-Agent'] = 'Node Client';
 
-  if (!body.hasOwnProperty('nonce')) {
+  if (!{}.hasOwnProperty.call(body, 'nonce')) {
     body.nonce = new Date().getTime() * 100;
   } else {
     const nonce = +body.nonce;
@@ -54,10 +50,12 @@ const makeRequest = (options, callback) => {
     }
 
     headers['API-Key'] = publicKey;
-    headers['API-Sign'] = getSign(path, body, secretKey);
+    headers['API-Sign'] = makeSignature(path, body, secretKey);
   }
 
-  request({ headers, path, timeout, body }, (err, res) => {
+  request({
+    headers, path, timeout, body,
+  }, (err, res) => {
     if (err) {
       callback(err);
       return;
@@ -105,7 +103,9 @@ module.exports = (publicKey = '', secretKey = '') => {
       }
       const type = privateMethods.indexOf(item) !== -1 ? 'private' : 'public';
       const path = `/${version}/${type}/${item}`;
-      const options = Object.assign({}, { path, body, publicKey, secretKey, timeout, otp });
+      const options = Object.assign({}, {
+        path, body, publicKey, secretKey, timeout, otp,
+      });
 
       makeRequest(options, (err, res) => {
         if (err) {

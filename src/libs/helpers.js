@@ -1,8 +1,6 @@
 const crypto = require('crypto');
 const qs = require('querystring');
 
-const helpers = {};
-
 /**
  * Method for generating sign signature
  * @param {string} path - Request path
@@ -10,7 +8,7 @@ const helpers = {};
  * @param {string} secret - Secret key for signing
  * @returns {string} Sign signature
  */
-helpers.makeSignature = (path, body, secret) => {
+const makeSignature = (path, body, secret) => {
   const strBody = qs.stringify(body);
   const secret64 = Buffer.from(secret, 'base64');
   const hash = crypto.createHash('sha256')
@@ -26,6 +24,6 @@ helpers.makeSignature = (path, body, secret) => {
  * @param {*} object - Test parameter
  * @returns {boolean}
  */
-helpers.isFunction = object => !!(object && object.constructor && object.call && object.apply);
+const isFunction = object => !!(object && object.constructor && object.call && object.apply);
 
-module.exports = helpers;
+module.exports = { makeSignature, isFunction };

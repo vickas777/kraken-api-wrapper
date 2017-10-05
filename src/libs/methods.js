@@ -1,6 +1,4 @@
-const methods = {};
-
-methods.private = [
+const privateMethods = [
   'Balance',
   'TradeBalance',
   'OpenOrders',
@@ -15,7 +13,7 @@ methods.private = [
   'AddOrder',
   'CancelOrder',
 ];
-methods.public = [
+const publicMethods = [
   'Time',
   'Assets',
   'AssetPairs',
@@ -26,4 +24,4 @@ methods.public = [
   'Spread',
 ];
 
-module.exports = methods;
+module.exports = { privateMethods, publicMethods };

@@ -16,11 +16,13 @@ const defaults = {
  * @param {Function} callback
  */
 module.exports = (opts, callback) => {
-  const { headers, path, timeout, body } = opts;
+  const {
+    headers, path, timeout, body,
+  } = opts;
   const options = Object.assign({}, defaults, { headers, path, timeout });
-  let data = '';
   const req = https.request(options, (res) => {
     res.setEncoding('utf8');
+    let data = '';
     res.on('data', (chunk) => {
       data += chunk;
     });
