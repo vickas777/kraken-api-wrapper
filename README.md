@@ -56,6 +56,17 @@ Providing `cb` function you will have default node callback based api, if not - 
 * Private trading methods:
   * `kraken.AddOrder(params[, cb])` - [Add standard order](https://www.kraken.com/help/api#add-standard-order)
   * `kraken.CancelOrder(params[, cb])` - [Cancel open order](https://www.kraken.com/help/api#cancel-open-order)
+* Private user funding:
+  *  `kraken.DepositMethods(params[, cb])` - [Get deposit methods](https://www.kraken.com/help/api#deposit-methods)
+  *  `kraken.DepositAddresses(params[, cb])` - [Get deposit addresses](https://www.kraken.com/help/api#deposit-addresses)
+  *  `kraken.DepositStatus(params[, cb])` - [Get status of recent deposits](https://www.kraken.com/help/api#deposit-status)
+  *  `kraken.WithdrawInfo(params[, cb])` - [Get withdrawal information](https://www.kraken.com/help/api#get-withdrawal-info)
+  *  `kraken.Withdraw(params[, cb])` - [Withdraw funds](https://www.kraken.com/help/api#withdraw-funds)
+  *  `kraken.WithdrawStatus(params[, cb])` - [Get status of recent withdrawals](https://www.kraken.com/help/api#withdraw-status)
+  *  `kraken.WithdrawCancel(params[, cb])` - [Request withdrawal cancelation](https://www.kraken.com/help/api#withdraw-cancel)
+
+## IMPORTANT
+Private user funding is a tentative API and may be updated in the future. If smth is broken inside this part read [API documentation](https://www.kraken.com/help/api#private-user-funding). If changes touch API methods please open [issue](https://github.com/vickas777/kraken-api-wrapper/issues) on github
 
 ## Examples
 Regular usage only public methods:
