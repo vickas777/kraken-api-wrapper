@@ -12,6 +12,13 @@ const privateMethods = [
   'TradeVolume',
   'AddOrder',
   'CancelOrder',
+  'DepositMethods',
+  'DepositAddresses',
+  'DepositStatus',
+  'WithdrawInfo',
+  'Withdraw',
+  'WithdrawStatus',
+  'WithdrawCancel',
 ];
 const publicMethods = [
   'Time',
